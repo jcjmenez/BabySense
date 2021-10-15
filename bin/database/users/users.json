@@ -1,0 +1,26 @@
+{
+  "1": {
+    "id": 1,
+    "type": "Baby",
+    "mail": "baby@gmail.com",
+    "username": "baby",
+    "password": "123",
+    "creationDate": "Oct 15, 2021 8:57:07 PM"
+  },
+  "2": {
+    "id": 2,
+    "type": "Parent",
+    "mail": "mother@gmail.com",
+    "username": "mother",
+    "password": "123",
+    "creationDate": "Oct 15, 2021 8:57:07 PM"
+  },
+  "3": {
+    "id": 3,
+    "type": "Doctor",
+    "mail": "doctor@gmail.com",
+    "username": "doctor",
+    "password": "123",
+    "creationDate": "Oct 15, 2021 8:57:07 PM"
+  }
+}

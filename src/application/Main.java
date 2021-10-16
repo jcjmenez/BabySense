@@ -29,7 +29,7 @@ public class Main extends Application {
 			primaryStage.show();
 			controller.startSlideAnim(); // Empezamos la animacion de slide
 			SoundPlayer sp = new SoundPlayer();
-			sp.playSound("login.wav");
+			sp.playSound("login.wav", -10);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

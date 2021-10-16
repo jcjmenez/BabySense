@@ -8,11 +8,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 // Custom imports
 import java.io.IOException;
@@ -66,7 +68,14 @@ public class LoginController {
 	 * Funcion que empieza la animacion de slide cuando se inicia el programa
 	 */
 	public void startSlideAnim() {
-		new animatefx.animation.SlideInLeft(anchorLogin).setSpeed(0.5).play();
+		new animatefx.animation.ZoomInLeft(logoAnchor).setSpeed(0.3).play();
+		FadeTransition fade = new FadeTransition();
+		fade.setNode(anchorLogin);
+		fade.setFromValue(0);
+		fade.setToValue(1);
+		fade.setDuration(Duration.seconds(1));
+		fade.play();
+		new animatefx.animation.SlideInLeft(anchorLogin).setSpeed(0.9).play();
 	}
 	
 	/**
@@ -137,13 +146,6 @@ public class LoginController {
 		System.out.println("HELLO");
 	}
 	
-	/**
-	 * TODO: Sistema de creacion de cuentas con verificacion por email ,
-	 * fixear movimiento de 250px 
-	 * crear anchor por encima invisible 
-	 * hacer el anchor mismi color fondo
-	 * @param event
-	 */
     @FXML
     void switchRegister(ActionEvent event) {
 		try {

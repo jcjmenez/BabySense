@@ -17,7 +17,6 @@
    <children>
       <AnchorPane layoutX="15.0" layoutY="16.0" prefHeight="569.0" prefWidth="614.0" style="-fx-background-color: grey; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="47.0">
          <children>
-            <AnchorPane layoutX="33.0" layoutY="56.0" maxWidth="444.0" prefHeight="336.0" prefWidth="444.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="177.0" AnchorPane.topAnchor="56.0" />
             <AnchorPane fx:id="anchorLogin" layoutX="353.0" layoutY="46.0" maxWidth="294.0" prefHeight="413.0" prefWidth="257.0" style="-fx-background-color: white; -fx-background-radius: 1em;" styleClass="-fx-background-radius" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="46.0">
                <children>
                   <VBox alignment="CENTER" layoutX="372.0" layoutY="17.0" prefHeight="378.0" prefWidth="192.0" spacing="20.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="372.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="17.0">

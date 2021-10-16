@@ -22,15 +22,5 @@
     "username": "doctor",
     "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
     "creationDate": "Oct 15, 2021 8:57:07 PM"
-  },
-  "4": {
-    "id": 4,
-    "type": "Parent",
-    "name": "Adrian",
-    "surname": "Diaz",
-    "mail": "adritupapi@gmail",
-    "username": "adrian",
-    "password": "ea99e5c234751db70626d392814c47fa5e1e1c3e4e77bc5532304b90d04477f2",
-    "creationDate": "Oct 16, 2021 9:30:07 PM"
   }
 }

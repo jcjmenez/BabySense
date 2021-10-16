@@ -2,6 +2,7 @@ package controller;
 
 // JavaFX imports
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
@@ -15,7 +16,6 @@ import util.Crypto;
 import util.FieldValidator;
 import util.JsonHelper;
 import java.util.HashMap;
-
 
 
 public class RegisterController{
@@ -39,37 +39,76 @@ public class RegisterController{
     private JFXTextField emailTF;
 
     @FXML
-    private JFXTextField passwordTF;
+    private JFXPasswordField passwordTF;
 
     @FXML
     private JFXButton signBtn;
     
     private HashMap<Integer, User> users = new HashMap<Integer, User>();
 	private JsonHelper jsonHelper = new JsonHelper();
+	private FieldValidator validator = new FieldValidator();
+	
 	/**
 	 * Funcion que carga los usuarios y los guarda en el hashmap de usuarios
 	 */
 	public void loadUsers() {
 		users = jsonHelper.deserializeJsonUsers("src/database/users/users.json");
 	}
-    
-	@FXML
+	
+    @FXML
 	void signUp(ActionEvent event) {
-		FieldValidator validator = new FieldValidator();
 		Crypto hasher = new Crypto();
 		loadUsers();
-		if (validator.isEmailValid(emailTF.getText()) && usernameTF.getText().length() > 3 
+		// Si los campos son validos, se crea el nuevo usuario y se registra en la base de datos
+		if (nameTF.getText().length() > 0 && surnameTF.getText().length() > 0
+				&& validator.isEmailValid(emailTF.getText())
 				&& validator.isUsernameValid(usernameTF.getText(), users)
-				&& validator.isPasswordValid(passwordTF.getText()) ) {
+				&& validator.isPasswordValid(passwordTF.getText())) {
+			// TODO: Enviar correo de verificacion con un codigo usando:
+			// hasher.generateVericationCode(6)
 			User signedUser = new User("Parent", nameTF.getText(), surnameTF.getText(), emailTF.getText(), 
 					usernameTF.getText(), hasher.hashStringSha256(passwordTF.getText()));
 			users.put(signedUser.getId(), signedUser);
 			jsonHelper.serializeToJsonUsers("src/database/users/users.json", users);
 		}
-		
-		
+		// Si no son validos, mostramos los errores por animaciones
+		else {
+			errorTF.setText("Incorrect fields");
+			if (nameTF.getText().length() <= 0) {
+				nameTF.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+				new animatefx.animation.Shake(nameTF).setSpeed(1).play();
+			}
+			else {
+				nameTF.setStyle(null);
+			}
+			if (surnameTF.getText().length() <= 0) {
+				surnameTF.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+				new animatefx.animation.Shake(surnameTF).setSpeed(1).play();
+			}
+			else {
+				surnameTF.setStyle(null);
+			}
+			if (!validator.isUsernameValid(usernameTF.getText(), users)) {
+				usernameTF.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+				new animatefx.animation.Shake(usernameTF).setSpeed(1).play();
+			}
+			else {
+				usernameTF.setStyle(null);
+			}
+			if (!validator.isEmailValid(emailTF.getText())) {
+				emailTF.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+				new animatefx.animation.Shake(emailTF).setSpeed(1).play();
+			}
+			else {
+				emailTF.setStyle(null);
+			}
+			if (!validator.isPasswordValid(passwordTF.getText())) {
+				passwordTF.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+				new animatefx.animation.Shake(passwordTF).setSpeed(1).play();
+			}
+			else {
+				passwordTF.setStyle(null);
+			}
+		}		
 	}
-
 }
-
-

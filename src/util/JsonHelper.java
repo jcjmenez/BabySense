@@ -23,9 +23,7 @@ public class JsonHelper {
 	 */
 	public void serializeToJsonUsers(String path, HashMap<Integer, User> users) {
 		Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
-		String userRepresentation = prettyGson.toJson(users);
-		System.out.println(userRepresentation);
-		
+		//String userRepresentation = prettyGson.toJson(users);
 		try (FileWriter writer = new FileWriter(path)) {
 			prettyGson.toJson(users, writer);
 		} catch (IOException e) {

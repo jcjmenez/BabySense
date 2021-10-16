@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -20,28 +22,28 @@
                <children>
                   <VBox alignment="CENTER" layoutX="372.0" layoutY="19.0" prefHeight="357.0" prefWidth="190.0" spacing="20.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="372.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="19.0">
                      <children>
-                        <Label fx:id="errorTF" />
-                        <TextFlow prefHeight="31.0" prefWidth="96.0" textAlignment="CENTER">
+                        <Label fx:id="errorTF" textFill="RED" />
+                        <HBox prefHeight="32.0" prefWidth="190.0">
                            <children>
-                              <JFXTextField fx:id="nameTF" focusColor="#a840a8" prefHeight="25.0" prefWidth="83.0" promptText="Name">
-                                 <padding>
-                                    <Insets right="10.0" />
-                                 </padding>
+                              <JFXTextField fx:id="nameTF" focusColor="#a840a8" labelFloat="true" prefHeight="25.0" prefWidth="105.0" promptText="Name">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
                               </JFXTextField>
-                              <JFXTextField fx:id="surnameTF" focusColor="#a840a8" prefHeight="25.0" prefWidth="106.0" promptText="Surname">
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
+                              <JFXTextField fx:id="surnameTF" focusColor="#a840a8" labelFloat="true" prefHeight="25.0" prefWidth="104.0" promptText="Surname">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
                               </JFXTextField>
                            </children>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </TextFlow>
-                        <JFXTextField fx:id="usernameTF" focusColor="#a840a8" prefHeight="25.0" prefWidth="207.0" promptText="Username" />
-                        <JFXTextField fx:id="emailTF" focusColor="#a840a8" promptText="Email" />
-                        <JFXTextField fx:id="passwordTF" focusColor="#a840a8" promptText="Password" />
-                        <JFXButton fx:id="signBtn" onAction="#signUp" ripplerFill="WHITE" style="-fx-background-color: #edcfee; -fx-background-radius: 1em;" text="Sign Up" />
+                        </HBox>
+                        <JFXTextField fx:id="usernameTF" focusColor="#a840a8" labelFloat="true" prefHeight="25.0" prefWidth="207.0" promptText="Username" />
+                        <JFXTextField fx:id="emailTF" focusColor="#a840a8" labelFloat="true" promptText="Email" />
+                        <JFXPasswordField fx:id="passwordTF" focusColor="#a840a8" labelFloat="true" promptText="Password" />
+                        <JFXButton fx:id="signBtn" onAction="#signUp" prefHeight="25.0" prefWidth="258.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee; -fx-background-radius: 1em;" text="Sign Up">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
                      </children>
                      <padding>
                         <Insets top="75.0" />

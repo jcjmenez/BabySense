@@ -46,7 +46,4 @@ public class FieldValidator {
 		}
 		return true;
 	}
-
-
-	
 }

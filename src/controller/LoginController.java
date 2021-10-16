@@ -8,13 +8,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 // Custom imports
 import java.io.IOException;
@@ -60,8 +58,6 @@ public class LoginController {
 		return mainWindow;
 	}
 
-
-
 	public void setMainWindow(Stage mainWindow) {
 		this.mainWindow = mainWindow;
 	}
@@ -93,7 +89,7 @@ public class LoginController {
 			for (User user : users.values()) {
 				Crypto hasher = new Crypto();
 				/*
-				 *  Si el usuario o email y la contraseña concuerdan con los datos
+				 *  Si el usuario o email y la contraseï¿½a concuerdan con los datos
 				 *  almacenados en la base de datos se loguea
 				 */
 				if ((userTF.getText().toLowerCase().equals(user.getUsername())
@@ -107,7 +103,7 @@ public class LoginController {
 			// TODO: Cambiar a ventana de usuario una vez logueado
 			if (logged) {
 				System.out.println("Logged user type = " + loggedUser.getType());
-				FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/PacienteView.fxml"));
+				FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/parent/PacienteView.fxml"));
 				PacienteController controller =  new PacienteController();
 				loader.setController(controller);
 				Parent node;
@@ -141,7 +137,6 @@ public class LoginController {
 		System.out.println("HELLO");
 	}
 	
-	
 	/**
 	 * TODO: Sistema de creacion de cuentas con verificacion por email ,
 	 * fixear movimiento de 250px 
@@ -152,7 +147,7 @@ public class LoginController {
     @FXML
     void switchRegister(ActionEvent event) {
 		try {
-			FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/RegisterView.fxml"));
+			FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/login/RegisterView.fxml"));
 			RegisterController controller =  new RegisterController();
 			loader.setController(controller);
 			Parent node;
@@ -164,10 +159,5 @@ public class LoginController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-    	
     }
-	
-	
-
 }

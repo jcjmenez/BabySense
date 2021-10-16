@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -17,20 +18,26 @@
       <AnchorPane layoutX="15.0" layoutY="16.0" prefHeight="569.0" prefWidth="614.0" style="-fx-background-color: grey; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="47.0">
          <children>
             <AnchorPane layoutX="33.0" layoutY="56.0" maxWidth="444.0" prefHeight="336.0" prefWidth="444.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="177.0" AnchorPane.topAnchor="56.0" />
-            <AnchorPane layoutX="353.0" layoutY="46.0" maxWidth="294.0" prefHeight="413.0" prefWidth="257.0" style="-fx-background-color: white; -fx-background-radius: 1em;" styleClass="-fx-background-radius" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="46.0">
+            <AnchorPane fx:id="anchorLogin" layoutX="353.0" layoutY="46.0" maxWidth="294.0" prefHeight="413.0" prefWidth="257.0" style="-fx-background-color: white; -fx-background-radius: 1em;" styleClass="-fx-background-radius" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="46.0">
                <children>
                   <VBox alignment="CENTER" layoutX="372.0" layoutY="17.0" prefHeight="378.0" prefWidth="192.0" spacing="20.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="372.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="17.0">
                      <children>
                         <Label fx:id="errorTF" prefHeight="17.0" prefWidth="176.0" textFill="RED" />
                         <JFXTextField fx:id="userTF" focusColor="#a840a8" labelFloat="true" promptText="Username" unFocusColor="BLACK" />
                         <JFXPasswordField fx:id="passTF" focusColor="#a840a8" labelFloat="true" promptText="Password" unFocusColor="BLACK" />
-                        <JFXButton fx:id="loginBtn" onAction="#login" onKeyReleased="#login" prefHeight="25.0" prefWidth="196.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee;" text="Log In" />
+                        <JFXButton fx:id="loginBtn" onAction="#login" onKeyReleased="#login" prefHeight="25.0" prefWidth="196.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee;" text="Log In">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
                         <Hyperlink fx:id="forgotTF" onAction="#forgotPassword" text="Forgotten password?" textFill="#b921b6" translateY="-13.0">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
                         </Hyperlink>
-                        <JFXButton fx:id="newBtn" onAction="#createAccount" prefHeight="25.0" prefWidth="207.0" ripplerFill="WHITE" style="-fx-background-color: #F285F0;" text="Create New Account" />
+                        <JFXButton fx:id="newBtn" onAction="#createAccount" prefHeight="25.0" prefWidth="207.0" ripplerFill="WHITE" style="-fx-background-color: #F285F0;" text="Create New Account">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
                      </children>
                      <padding>
                         <Insets top="50.0" />

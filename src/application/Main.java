@@ -27,6 +27,7 @@ public class Main extends Application {
 			primaryStage.setMinWidth(700);
 			primaryStage.setMinHeight(600);
 			primaryStage.show();
+			controller.startSlideAnim(); // Empezamos la animacion de slide
 			SoundPlayer sp = new SoundPlayer();
 			sp.playSound("login.wav");
 		} catch(Exception e) {

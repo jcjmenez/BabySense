@@ -25,7 +25,7 @@
                         <Label fx:id="errorTF" prefHeight="17.0" prefWidth="176.0" textFill="RED" />
                         <JFXTextField fx:id="userTF" focusColor="#a840a8" labelFloat="true" promptText="Username" unFocusColor="BLACK" />
                         <JFXPasswordField fx:id="passTF" focusColor="#a840a8" labelFloat="true" promptText="Password" unFocusColor="BLACK" />
-                        <JFXButton fx:id="loginBtn" onAction="#login" onKeyReleased="#login" prefHeight="25.0" prefWidth="196.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee;" text="Log In">
+                        <JFXButton fx:id="loginBtn" onAction="#login" onKeyReleased="#login" prefHeight="25.0" prefWidth="196.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee; -fx-background-radius: 1em;" text="Log In">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></JFXButton>
@@ -34,7 +34,7 @@
                               <Insets />
                            </VBox.margin>
                         </Hyperlink>
-                        <JFXButton fx:id="newBtn" onAction="#createAccount" prefHeight="25.0" prefWidth="207.0" ripplerFill="WHITE" style="-fx-background-color: #F285F0;" text="Create New Account">
+                        <JFXButton fx:id="newBtn" onAction="#switchRegister" prefHeight="25.0" prefWidth="207.0" ripplerFill="WHITE" style="-fx-background-color: #F285F0; -fx-background-radius: 1em;" text="Create New Account">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></JFXButton>
@@ -45,7 +45,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="5.0" layoutY="13.0" prefHeight="481.0" prefWidth="361.0" style="-fx-background-color: linear-gradient(to right top, #ebaceb, #eac3f6, #ecd8fc, #f3ecff, #ffffff); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="19.0">
+            <AnchorPane fx:id="logoAnchor" layoutX="5.0" layoutY="13.0" prefHeight="481.0" prefWidth="361.0" style="-fx-background-color: linear-gradient(to right top, #ebaceb, #eac3f6, #ecd8fc, #f3ecff, #ffffff); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="19.0">
                <children>
                   <VBox alignment="CENTER" layoutX="69.0" layoutY="157.0" prefHeight="469.0" prefWidth="361.0" style="-fx-background-radius: 1em;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>

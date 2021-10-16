@@ -8,20 +8,26 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 // Custom imports
 import java.io.IOException;
 import java.util.HashMap;
 import model.User;
+import util.Crypto;
 import util.JsonHelper;
 
 
 public class LoginController {
+	
+	@FXML
+	private AnchorPane logoAnchor;
 
     @FXML
     private AnchorPane anchorLogin;
@@ -43,7 +49,7 @@ public class LoginController {
 
     @FXML
     private JFXButton newBtn;
-
+    
     
     private Stage mainWindow;
     
@@ -82,22 +88,25 @@ public class LoginController {
     void login(ActionEvent event) {
 		try {
 			boolean logged = false;
+			User loggedUser = null;
 			loadUsers();
 			for (User user : users.values()) {
+				Crypto hasher = new Crypto();
 				/*
-				 *  Si el usuario o email y la contraseña concuerdan con los datos
+				 *  Si el usuario o email y la contrase�a concuerdan con los datos
 				 *  almacenados en la base de datos se loguea
-				 *  TODO: Una vez encriptadas las contraseñas, comprobar contraseñas
-				 *  encriptadas en vez de en texto plano
 				 */
 				if ((userTF.getText().toLowerCase().equals(user.getUsername())
 						|| userTF.getText().toLowerCase().equals(user.getMail()))
-						&& passTF.getText().equals(user.getPassword())) {
+						&& hasher.hashStringSha256(passTF.getText()).equals(user.getPassword())) {
 					logged = true;
+					loggedUser = user;
+					break;
 				}
 			}
 			// TODO: Cambiar a ventana de usuario una vez logueado
 			if (logged) {
+				System.out.println("Logged user type = " + loggedUser.getType());
 				FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/PacienteView.fxml"));
 				PacienteController controller =  new PacienteController();
 				loader.setController(controller);
@@ -106,6 +115,7 @@ public class LoginController {
 				controller.setText(userTF.getText());
 				Scene scene = new Scene(node, mainWindow.getScene().getWidth(), mainWindow.getScene().getHeight());
 				mainWindow.setScene(scene);
+				
 			}
 			else {
 				// Animaciones de error
@@ -118,7 +128,6 @@ public class LoginController {
 			}
 	    	
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
@@ -134,12 +143,29 @@ public class LoginController {
 	
 	
 	/**
-	 * TODO: Sistema de creacion de cuentas con verificacion por email
+	 * TODO: Sistema de creacion de cuentas con verificacion por email ,
+	 * fixear movimiento de 250px 
+	 * crear anchor por encima invisible 
+	 * hacer el anchor mismi color fondo
 	 * @param event
 	 */
     @FXML
-    void createAccount(ActionEvent event) {
+    void switchRegister(ActionEvent event) {
+		try {
+			FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/RegisterView.fxml"));
+			RegisterController controller =  new RegisterController();
+			loader.setController(controller);
+			Parent node;
+			node = loader.load();
+			Scene scene = new Scene(node, mainWindow.getScene().getWidth(), mainWindow.getScene().getHeight());
+			mainWindow.setScene(scene);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
+    	
     }
 	
 	

@@ -42,7 +42,7 @@ public class FieldValidator {
 	public boolean isUsernameValid(String username , HashMap<Integer, User> users) {
 		if (username.length() <= 3) return false;
 		for (User user : users.values()) {
-			if (username.equals(user.getUsername())) return false;
+			if (username.toLowerCase().equals(user.getUsername().toLowerCase())) return false;
 		}
 		return true;
 	}

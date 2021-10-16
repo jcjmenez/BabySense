@@ -101,8 +101,8 @@ public class LoginController {
 				 *  Si el usuario o email y la contrase�a concuerdan con los datos
 				 *  almacenados en la base de datos se loguea
 				 */
-				if ((userTF.getText().toLowerCase().equals(user.getUsername())
-						|| userTF.getText().toLowerCase().equals(user.getMail()))
+				if ((userTF.getText().toLowerCase().equals(user.getUsername().toLowerCase())
+						|| userTF.getText().toLowerCase().equals(user.getMail().toLowerCase()))
 						&& hasher.hashStringSha256(passTF.getText()).equals(user.getPassword())) {
 					logged = true;
 					loggedUser = user;

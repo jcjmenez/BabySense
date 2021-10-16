@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="15.0" layoutY="16.0" prefHeight="569.0" prefWidth="614.0" style="-fx-background-color: grey; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="47.0">
+         <children>
+            <AnchorPane layoutX="33.0" layoutY="56.0" maxWidth="444.0" prefHeight="336.0" prefWidth="444.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="177.0" AnchorPane.topAnchor="56.0" />
+            <AnchorPane fx:id="anchorLogin" layoutX="353.0" layoutY="46.0" maxWidth="294.0" prefHeight="413.0" prefWidth="257.0" style="-fx-background-color: white; -fx-background-radius: 1em;" styleClass="-fx-background-radius" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="46.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="372.0" layoutY="19.0" prefHeight="357.0" prefWidth="190.0" spacing="20.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="372.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="19.0">
+                     <children>
+                        <Label fx:id="errorTF" textFill="RED" />
+                        <HBox prefHeight="32.0" prefWidth="190.0">
+                           <children>
+                              <JFXTextField fx:id="nameTF" focusColor="#a840a8" labelFloat="true" prefHeight="25.0" prefWidth="105.0" promptText="Name">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="surnameTF" focusColor="#a840a8" labelFloat="true" prefHeight="25.0" prefWidth="104.0" promptText="Surname">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <JFXTextField fx:id="usernameTF" focusColor="#a840a8" labelFloat="true" prefHeight="25.0" prefWidth="207.0" promptText="Username" />
+                        <JFXTextField fx:id="emailTF" focusColor="#a840a8" labelFloat="true" promptText="Email" />
+                        <JFXPasswordField fx:id="passwordTF" focusColor="#a840a8" labelFloat="true" promptText="Password" />
+                        <JFXButton fx:id="signBtn" onAction="#signUp" prefHeight="25.0" prefWidth="258.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee; -fx-background-radius: 1em;" text="Sign Up">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                     </children>
+                     <padding>
+                        <Insets top="75.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="5.0" layoutY="13.0" prefHeight="481.0" prefWidth="361.0" style="-fx-background-color: linear-gradient(to right top, #ebaceb, #eac3f6, #ecd8fc, #f3ecff, #ffffff); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="19.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="69.0" layoutY="157.0" prefHeight="469.0" prefWidth="361.0" style="-fx-background-radius: 1em;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="208.0" fitWidth="208.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/images/logo.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label text="BabySense">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label text="Sense your baby">
+                           <font>
+                              <Font name="System Italic" size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -67,7 +67,7 @@ public class RegisterController{
 			// TODO: Enviar correo de verificacion con un codigo usando:
 			// hasher.generateVericationCode(6)
 			User signedUser = new User("Parent", nameTF.getText(), surnameTF.getText(), emailTF.getText(), 
-					usernameTF.getText(), hasher.hashStringSha256(passwordTF.getText()));
+					usernameTF.getText().toLowerCase(), hasher.hashStringSha256(passwordTF.getText()));
 			users.put(signedUser.getId(), signedUser);
 			jsonHelper.serializeToJsonUsers("src/database/users/users.json", users);
 		}

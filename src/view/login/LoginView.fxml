@@ -7,15 +7,17 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to left bottom, #ffaeff, #fea7fa, #fda0f4, #fc99ee, #fb92e8);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="15.0" layoutY="16.0" prefHeight="569.0" prefWidth="614.0" style="-fx-background-color: grey; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="47.0">
+      <AnchorPane layoutX="15.0" layoutY="16.0" prefHeight="569.0" prefWidth="614.0" style="-fx-background-color: linear-gradient(to left bottom, #ffaeff, #fea7fa, #fda0f4, #fc99ee, #fb92e8);; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="47.0">
          <children>
             <AnchorPane fx:id="anchorLogin" layoutX="353.0" layoutY="46.0" maxWidth="294.0" prefHeight="413.0" prefWidth="257.0" style="-fx-background-color: white; -fx-background-radius: 1em;" styleClass="-fx-background-radius" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="46.0">
                <children>
@@ -33,16 +35,21 @@
                               <Insets />
                            </VBox.margin>
                         </Hyperlink>
-                        <JFXButton fx:id="newBtn" onAction="#switchRegister" prefHeight="25.0" prefWidth="207.0" ripplerFill="WHITE" style="-fx-background-color: #F285F0; -fx-background-radius: 1em;" text="Create New Account">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></JFXButton>
+                        <HBox alignment="CENTER" prefHeight="33.0" prefWidth="192.0">
+                           <children>
+                              <Label prefHeight="23.0" prefWidth="60.0" text="New user?" />
+                              <Hyperlink fx:id="newBtn" onAction="#switchRegister" text="Sign Up" textFill="#b921b6" />
+                           </children>
+                        </HBox>
                      </children>
                      <padding>
                         <Insets top="50.0" />
                      </padding>
                   </VBox>
                </children>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" />
+               </effect>
             </AnchorPane>
             <AnchorPane fx:id="logoAnchor" layoutX="5.0" layoutY="13.0" prefHeight="481.0" prefWidth="361.0" style="-fx-background-color: linear-gradient(to right top, #ebaceb, #eac3f6, #ecd8fc, #f3ecff, #ffffff); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="19.0">
                <children>
@@ -69,6 +76,9 @@
                      </children>
                   </VBox>
                </children>
+               <effect>
+                  <DropShadow />
+               </effect>
             </AnchorPane>
          </children>
       </AnchorPane>

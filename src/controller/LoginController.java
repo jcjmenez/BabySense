@@ -48,7 +48,7 @@ public class LoginController {
     private Hyperlink forgotTF;
 
     @FXML
-    private JFXButton newBtn;
+    private Hyperlink newBtn;
     
     
     private Stage mainWindow;

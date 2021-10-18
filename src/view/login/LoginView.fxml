@@ -37,7 +37,7 @@
                         </Hyperlink>
                         <HBox alignment="CENTER" prefHeight="33.0" prefWidth="192.0">
                            <children>
-                              <Label prefHeight="23.0" prefWidth="60.0" text="New user?" />
+                              <Label prefHeight="23.0" prefWidth="70.0" text="New user?" />
                               <Hyperlink fx:id="newBtn" onAction="#switchRegister" text="Sign Up" textFill="#b921b6" />
                            </children>
                         </HBox>

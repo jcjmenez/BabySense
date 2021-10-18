@@ -143,7 +143,19 @@ public class LoginController {
 	 */
 	@FXML
 	void forgotPassword(ActionEvent event) {
-		System.out.println("HELLO");
+		try {
+			FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/login/EmailForgotView.fxml"));
+			EmailForgotController controller =  new EmailForgotController();
+			controller.setMainWindow(mainWindow);
+			loader.setController(controller);
+			Parent node;
+			node = loader.load();
+			Scene scene = new Scene(node, mainWindow.getScene().getWidth(), mainWindow.getScene().getHeight());
+			mainWindow.setScene(scene);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
     @FXML
@@ -151,6 +163,7 @@ public class LoginController {
 		try {
 			FXMLLoader loader =  new FXMLLoader(getClass().getResource("/view/login/RegisterView.fxml"));
 			RegisterController controller =  new RegisterController();
+			controller.setMainWindow(mainWindow);
 			loader.setController(controller);
 			Parent node;
 			node = loader.load();

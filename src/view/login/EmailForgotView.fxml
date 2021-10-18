@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -23,24 +20,12 @@
                <children>
                   <VBox alignment="CENTER" layoutX="372.0" layoutY="17.0" prefHeight="378.0" prefWidth="192.0" spacing="20.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="372.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="17.0">
                      <children>
-                        <Label fx:id="errorTF" prefHeight="17.0" prefWidth="176.0" textFill="RED" />
-                        <JFXTextField fx:id="userTF" focusColor="#a840a8" labelFloat="true" promptText="Username" unFocusColor="BLACK" />
-                        <JFXPasswordField fx:id="passTF" focusColor="#a840a8" labelFloat="true" promptText="Password" unFocusColor="BLACK" />
-                        <JFXButton fx:id="loginBtn" onAction="#login" onKeyReleased="#login" prefHeight="25.0" prefWidth="196.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee; -fx-background-radius: 1em;" text="Log In">
+                        <Label prefHeight="71.0" prefWidth="200.0" text="Enter your email to find your account" wrapText="true" />
+                        <JFXTextField fx:id="emailTF" focusColor="#a840a8" labelFloat="true" promptText="Email" unFocusColor="BLACK" />
+                        <JFXButton fx:id="sendBtn" onAction="#sendVerification" prefHeight="25.0" prefWidth="196.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee; -fx-background-radius: 1em;" text="Send">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></JFXButton>
-                        <Hyperlink fx:id="forgotTF" onAction="#forgotPassword" text="Forgotten password?" textFill="#b921b6" translateY="-13.0">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </Hyperlink>
-                        <HBox alignment="CENTER" prefHeight="33.0" prefWidth="192.0">
-                           <children>
-                              <Label prefHeight="23.0" prefWidth="70.0" text="New user?" />
-                              <Hyperlink fx:id="newBtn" onAction="#switchRegister" text="Sign Up" textFill="#b921b6" />
-                           </children>
-                        </HBox>
                      </children>
                      <padding>
                         <Insets top="50.0" />

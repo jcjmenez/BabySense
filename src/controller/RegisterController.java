@@ -9,7 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-
+import javafx.stage.Stage;
 // Custom imports
 import model.User;
 import util.Crypto;
@@ -44,9 +44,19 @@ public class RegisterController{
     @FXML
     private JFXButton signBtn;
     
+    private Stage mainWindow;
     private HashMap<Integer, User> users = new HashMap<Integer, User>();
 	private JsonHelper jsonHelper = new JsonHelper();
 	private FieldValidator validator = new FieldValidator();
+	
+	
+	public Stage getMainWindow() {
+		return mainWindow;
+	}
+
+	public void setMainWindow(Stage mainWindow) {
+		this.mainWindow = mainWindow;
+	}
 	
 	/**
 	 * Funcion que carga los usuarios y los guarda en el hashmap de usuarios

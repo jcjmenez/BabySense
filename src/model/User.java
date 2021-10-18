@@ -42,9 +42,25 @@ public class User {
     public String getType() {
         return type;
     }
+    
+    public String getName() {
+    	return name;
+    }
+    
+    public String getSurname() {
+    	return surname;
+    }
 
     public void setType(String type) {
         this.type = type;
+    }
+    
+    public void setName(String name) {
+    	this.name = name;
+    }
+    
+    public void setSurname(String surname) {
+    	this.surname = surname;
     }
 
     public String getMail() {

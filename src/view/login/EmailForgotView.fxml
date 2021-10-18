@@ -20,6 +20,7 @@
                <children>
                   <VBox alignment="CENTER" layoutX="372.0" layoutY="17.0" prefHeight="378.0" prefWidth="192.0" spacing="20.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="372.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="17.0">
                      <children>
+                        <Label fx:id="errorTF" alignment="CENTER" prefHeight="21.0" prefWidth="388.0" textAlignment="CENTER" textFill="RED" />
                         <Label prefHeight="71.0" prefWidth="200.0" text="Enter your email to find your account" wrapText="true" />
                         <JFXTextField fx:id="emailTF" focusColor="#a840a8" labelFloat="true" promptText="Email" unFocusColor="BLACK" />
                         <JFXButton fx:id="sendBtn" onAction="#sendVerification" prefHeight="25.0" prefWidth="196.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee; -fx-background-radius: 1em;" text="Send">

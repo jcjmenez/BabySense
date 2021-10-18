@@ -1,4 +1,4 @@
-package controller;
+package controller.login;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

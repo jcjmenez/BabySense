@@ -1,16 +1,17 @@
-package controller;
+package controller.login;
 
 import java.io.IOException;
 import java.util.HashMap;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.JFXPasswordField;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.User;
@@ -23,12 +24,15 @@ public class ChangePasswordController {
 
     @FXML
     private AnchorPane anchorLogin;
+    
+    @FXML
+    private Label errorTF;
 
     @FXML
-    private JFXTextField newTF;
+    private JFXPasswordField newTF;
 
     @FXML
-    private JFXTextField confirmNewTF;
+    private JFXPasswordField confirmNewTF;
 
     @FXML
     private JFXButton changeBtn;
@@ -67,7 +71,8 @@ public class ChangePasswordController {
     	
     	 
     	
-    	if (newTF.getText().equals(confirmNewTF.getText())) {
+    	if (newTF.getText().length() > 0 && confirmNewTF.getText().length() > 0
+    			&& newTF.getText().equals(confirmNewTF.getText())) {
     		loadUsers();
     		for (User user : users.values()) {
         		if (user.getMail().toLowerCase().equals(userEmail.toLowerCase())) {
@@ -90,6 +95,14 @@ public class ChangePasswordController {
     			e.printStackTrace();
     		}
 
+    	}
+    	else {
+    		// Animaciones de error
+    		errorTF.setText("Passwords don't match");
+			newTF.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+			new animatefx.animation.Shake(newTF).setSpeed(1).play();
+			confirmNewTF.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+			new animatefx.animation.Shake(confirmNewTF).setSpeed(1).play();
     	}
 		
     }

@@ -1,4 +1,4 @@
-package controller;
+package controller.login;
 
 
 import java.io.IOException;
@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -18,6 +19,9 @@ public class VerificationController {
 
     @FXML
     private AnchorPane anchorLogin;
+    
+    @FXML
+    private Label errorTF;
 
     @FXML
     private JFXTextField codeTF;
@@ -66,6 +70,12 @@ public class VerificationController {
     		} catch (IOException e) {
     			e.printStackTrace();
     		}
+    	}
+    	else {
+    		// Animaciones de error
+    		errorTF.setText("Invalid code");
+			codeTF.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+			new animatefx.animation.Shake(codeTF).setSpeed(1).play();
     	}
 
     }

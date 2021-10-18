@@ -20,8 +20,12 @@
                <children>
                   <VBox alignment="CENTER" layoutX="372.0" layoutY="17.0" prefHeight="378.0" prefWidth="192.0" spacing="20.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="372.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="17.0">
                      <children>
+                        <Label fx:id="errorTF" alignment="CENTER" prefHeight="21.0" prefWidth="416.0" textAlignment="CENTER" textFill="RED" />
                         <Label prefHeight="1.0" prefWidth="192.0" text="Enter the verfication code" />
-                        <JFXTextField fx:id="codeTF" focusColor="#a840a8" labelFloat="true" promptText="Verification Code" unFocusColor="BLACK" />
+                        <JFXTextField fx:id="codeTF" focusColor="#a840a8" labelFloat="true" promptText="Verification Code" unFocusColor="BLACK">
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin></JFXTextField>
                         <JFXButton fx:id="verifyBtn" onAction="#verifyCode" prefHeight="25.0" prefWidth="196.0" ripplerFill="WHITE" style="-fx-background-color: #edcfee; -fx-background-radius: 1em;" text="Verify">
                            <cursor>
                               <Cursor fx:constant="HAND" />

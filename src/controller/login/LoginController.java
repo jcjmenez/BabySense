@@ -1,4 +1,4 @@
-package controller;
+package controller.login;
 
 // JavaFX imports
 import com.jfoenix.controls.JFXButton;
